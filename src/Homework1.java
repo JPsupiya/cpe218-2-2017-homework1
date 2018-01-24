@@ -11,8 +11,8 @@ public class Homework1 {
         int i = -1;
         int result;
         // Begin of arguments input sample
-        if (args.length == 0) {
-            String input = "251-*32*+";
+        if (args.length > 0) {
+            String input = args[0];
             int ro = input.length();
 
             while (++i < ro) {
