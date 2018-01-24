@@ -11,6 +11,7 @@ public class Homework1Test {
 	ArrayList<CalculatorTestCase> theTestCaseList = new ArrayList<CalculatorTestCase>();
 
 	@Test
+
 	public void testMain() {
 		theTestCaseList.add(new CalculatorTestCase("251-*32*+", "(2*(5-1))+(3*2)=14"));
 		

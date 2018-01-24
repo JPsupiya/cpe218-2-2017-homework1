@@ -7,4 +7,8 @@ public class Node
         this.l = l;
         lf = rf = null;
     }
+
+    public String toString() {
+        return Character.toString(l);
+    }
 }

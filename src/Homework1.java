@@ -11,8 +11,8 @@ public class Homework1 {
         int i = -1;
         int result;
         // Begin of arguments input sample
-        if (args.length > 0) {
-            String input = args[0];
+        if (args.length == 0) {
+            String input = "251-*32*+";
             int ro = input.length();
 
             while (++i < ro) {
@@ -21,10 +21,12 @@ public class Homework1 {
                 s.push(n);
                 to = n;
             }
-            inorder(to);
+            System.out.print(inorder(to));
             System.out.print('=');
             result = calculate(to);
             System.out.println(result);
+
+            TreeIconDemo2.main(to);
         }
     }
 
@@ -48,12 +50,13 @@ public class Homework1 {
             ro.lf = (Node) s.pop();
         }
     }
-    public static void inorder(Node ro)
-    {
-        if(!Character.isDigit(ro.l)  && ro != to) System.out.print('(');
-        if(ro.lf != null) inorder(ro.lf);
-        System.out.print(ro.l);
-        if(ro.rf != null) inorder(ro.rf);
-        if(!Character.isDigit(ro.l) && ro != to) System.out.print(')');
+    public static String inorder(Node ro)  {
+        String text = "";
+        if(!Character.isDigit(ro.l)  && ro != to) text += ('(');
+        if(ro.lf != null) text += inorder(ro.lf);
+        text += (ro.l);
+        if(ro.rf != null) text += inorder(ro.rf);
+        if(!Character.isDigit(ro.l) && ro != to) text += (')');
+        return text;
     }
 }
